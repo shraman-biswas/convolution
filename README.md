@@ -1,4 +1,4 @@
-CONVOLUTION
+Convolution
 ===========
 
 Two different discrete 1-D convolution implementations.  
