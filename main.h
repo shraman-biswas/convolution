@@ -8,11 +8,9 @@
 
 #define SIZE(x) (sizeof(x) / sizeof(*(x)))
 
-/* input */
-const int x[] = {1, 1, 1, 1, 1, 1, 1, 1};
+const int x[] = {1, 1, 1, 1, 1, 1, 1, 1};	/* input */
 
-/* impulse response */
-const int h[] = {1, 1, 1, 1, 1, 1, 1, 1};
+const int h[] = {1, 1, 1, 1, 1, 1, 1, 1};	/* impulse response */
 
 static void disp_arr(const int *const x, const int len);
 

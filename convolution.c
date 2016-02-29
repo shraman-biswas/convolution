@@ -9,8 +9,8 @@ void input_side_convolve(
 	int *const y)
 {
 	int i, j;
-	for (i=0; i<len_x; ++i) {
-		for (j=0; j<len_h; ++j)
+	for (i=0; i<len_x; ++i) {		/* iterate over input */
+		for (j=0; j<len_h; ++j)		/* iterate over impulse resp. */
 			y[i + j] += x[i] * h[j];
 	}
 
@@ -25,12 +25,12 @@ void output_side_convolve(
 	int *const y)
 {
 	int i, j, len_total;
-	len_total = len_x + len_h - 1;						/* result length */
-	for (i=0; i<len_total; ++i) {						/* loop over result */
-		y[i] = 0;										/* clear first value */
-		for (j=0; j<len_h; ++j) {
-			if (((i - j) < 0) || ((i - j) >= len_x))	/* out of bounds */
-				continue;
+	len_total = len_x + len_h - 1;		/* convolution result length */
+	for (i=0; i<len_total; ++i) {		/* iterate over result */
+		y[i] = 0;			/* clear intiial value */
+		for (j=0; j<len_h; ++j) {	/* iterate over impulse resp. */
+			if (((i - j) < 0) || ((i - j) >= len_x))
+				continue;	/* out of bounds check */
 			y[i] += h[j] * x[i - j];
 		}
 	}
